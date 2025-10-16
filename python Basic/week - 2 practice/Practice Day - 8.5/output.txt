@@ -1,0 +1,8 @@
+Car Added: Toyota
+Bike Added: Yamaha
+Car Added: Honda
+
+---Vehicle Details---
+Type: Car, Name: Toyota, Speed: 150 Predicted: High-speed Vehicle
+Type: Bike, Name: Yamaha, Speed: 90 Predicted: Normal Vehicle
+Type: Car, Name: Honda, Speed: 120 Predicted: High-speed Vehicle
