@@ -4,14 +4,12 @@ class Vehicle:
         self.__vehicle_type = vehicle_type
         self.__name = name
         self.__speed = speed
-        self.vehicles.append(self)
+        Vehicle.vehicles.append(self)
 
 
-    def classify(self,speed):
-        if speed > 100:
-            return "High-speed Vehicle"
-        else:
-            return "Normal Vehicle" 
+    def classify(self):
+        return "High-speed Vehicle" if self.__speed > 100 else "Normal Vehicle"
+         
     @property
     def get_name(self):
         return self.__name
@@ -31,11 +29,8 @@ class Car(Vehicle):
     def show_info(self):
         print("\n---Vehicle Details---")
         for vehicle in self.vehicles:
-            print(f"Type: {vehicle.get_vehicle_type}, Name: {vehicle.get_name}, Speed: {vehicle.get_speed}",end=" ")
-            if vehicle.get_speed > 100:
-                print("Predicted: High-speed Vehicle")
-            else:
-                print("Predicted: Normal Vehicle")
+            print(f"Type: {vehicle.get_vehicle_type}, Name: {vehicle.get_name}, Speed: {vehicle.get_speed}, Predicted : {vehicle.classify()}")
+            
 
 class Bike(Vehicle):
     def __init__(self, vehicle_type, name, speed):
@@ -45,14 +40,8 @@ class Bike(Vehicle):
     def show_info(self):
         print("---Vehicle Details---")
         for vehicle in self.vehicles:
-            print(f"Type: {vehicle.get_vehicle_type}, Name: {vehicle.get_name}, Speed: {vehicle.get_speed}",end=" ")
-            if vehicle.get_speed > 100:
-                print("Predicted: High-speed Vehicle")
-            else:
-                print("Predicted: Normal Vehicle")
-
-
-
+            print(f"Type: {vehicle.get_vehicle_type}, Name: {vehicle.get_name}, Speed: {vehicle.get_speed}, Predicted : {vehicle.classify()}")
+            
 
 n = int(input())
 for i in range(0,n):
